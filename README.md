@@ -7,5 +7,7 @@ replace some files in ORB_SLAM3 with given files.
 
 # Examples
 python3 evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders
+
 python3 evo_TUM.py ~/dataset/Tum/folders
+
 python3 evo_EuRoc.py ~/dataset/EuRoc/folders
