@@ -1,0 +1,11 @@
+numpy
+matplotlib
+scipy>=1.2
+pandas
+seaborn>=0.9
+natsort
+argcomplete
+colorama>=0.3
+pygments
+pyyaml
+pillow
