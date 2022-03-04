@@ -12,7 +12,7 @@ sh ./build.sh
 ### Examples
 python3 ./auto_EVO-ORB_SLAM3/ICL-NUIM/evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders
 
-python3 ./auto_EVO-ORB_SLAM3/Tum/evo_TUM.py ~/dataset/Tum/folders
+python3 ./auto_EVO-ORB_SLAM3/Tum/evo_Tum.py ~/dataset/Tum/folders
 
 python3 ./auto_EVO-ORB_SLAM3/EuRoc/evo_EuRoc.py ~/dataset/EuRoc/folders
 
