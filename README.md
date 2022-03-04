@@ -10,10 +10,18 @@ sh ./build.sh
 ## 2. At the second step you do nothing apart from running the python programs.
 
 ### Examples
-python3 ./auto_EVO-ORB_SLAM3/ICL-NUIM/evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders
+cd ./auto_EVO-ORB_SLAM3/ICL-NUIM
 
-python3 ./auto_EVO-ORB_SLAM3/Tum/evo_Tum.py ~/dataset/Tum/folders
+python3 evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders
 
-python3 ./auto_EVO-ORB_SLAM3/EuRoc/evo_EuRoc.py ~/dataset/EuRoc/folders
+
+cd ./auto_EVO-ORB_SLAM3/Tum
+
+python3 evo_Tum.py ~/dataset/Tum/folders
+
+
+cd ./auto_EVO-ORB_SLAM3/EuRoc
+
+python3 evo_EuRoc.py ~/dataset/EuRoc/folders
 
 # Specialty
