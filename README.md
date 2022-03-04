@@ -25,5 +25,5 @@ cd ./auto_EVO-ORB_SLAM3/EuRoc
 
 python3 evo_EuRoc.py ~/dataset/EuRoc/folders
 
-# Specialty
+# 3. Specialty
 ...
