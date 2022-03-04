@@ -9,7 +9,7 @@ sh ./build.sh
 
 ## 2. At the second step you do nothing apart from running the python programs.
 
-### Examples
+## Examples
 #### ICL-NUIM dataset
 cd ./auto_EVO-ORB_SLAM3/ICL-NUIM
 
