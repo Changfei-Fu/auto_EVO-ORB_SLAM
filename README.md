@@ -7,7 +7,7 @@ cd ORB_SLAM3
 
 sh ./build.sh
 
-## 2. At the second step you do nothing apart from running the python programs
+## 2. At the second step you do nothing apart from running the python programs.
 
 ### Examples
 python3 ./auto_EVO-ORB_SLAM3/evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders
