@@ -26,4 +26,5 @@ cd ./auto_EVO-ORB_SLAM3/EuRoc
 python3 evo_EuRoc.py ~/dataset/EuRoc/folders
 
 # Specialty
-## 1. If this program is stoped before it finishes 10 times evoluation, the process can be continued next time you want to run it. But you'd better delete the colmap_ws directory, because the function to count the time consuming will resume.
+## 1. Resume after interrupted
+  If this project is stoped before it finishes 10 times evoluation, the process can be continued next time you want to run it. But you'd better delete the colmap_ws directory, because the function to count the time consuming will resume.
