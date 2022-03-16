@@ -25,8 +25,8 @@ cd ./auto_EVO-ORB_SLAM3/EuRoc
 
 python3 evo_EuRoc.py ~/dataset/EuRoc/folders
 
-# Specialty
+# Specialties
 ## 1. Resume after interrupted
-  If this project is stoped before it finishes 10 times evoluation, the process can be continued next time you want to run it. But you'd better delete the colmap_ws directory, because the function to count the time consuming will resume.
+  If this project is stoped before it finishes 10 times evoluation, the process can be continued next time you want to run it.
 ## 2. Automatically evoluate new sequences
   This project automatically run ORB_SLAM3 on all sequneces in the folder "~/dataset/<dataset_name>/folders", and after the process is interrupted you can resume it without rerun the finished sequences and finished times in 10 times. In addition, if you add new sequence into the folder, it will automatically proceed the new sequnces without waste time on the finished sequences.
