@@ -10,20 +10,20 @@ sh ./build.sh
 ## 2. At the second step you do nothing apart from running the python programs.
 
 ## Examples
-#### ICL-NUIM dataset
+#### 1). ICL-NUIM dataset
 cd ./auto_EVO-ORB_SLAM3/ICL-NUIM
 
 python3 evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders
 
-#### Tum dataset
+#### 2). Tum dataset
 cd ./auto_EVO-ORB_SLAM3/Tum
 
 python3 evo_Tum.py ~/dataset/Tum/folders
 
-#### EuRoc dataset
+#### 3). EuRoc dataset
 cd ./auto_EVO-ORB_SLAM3/EuRoc
 
 python3 evo_EuRoc.py ~/dataset/EuRoc/folders
 
 # Specialty
-...
+## 1. If this program is stoped before it finishes 10 times evoluation, the process can be continued next time you want to run it. But you'd better delete the colmap_ws directory, because the function to count the time consuming will resume.
