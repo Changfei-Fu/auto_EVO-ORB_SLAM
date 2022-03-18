@@ -58,6 +58,9 @@ ending time is： [1311878221512952000 us],refer to [795]th frame
 longest submap tracked ： [529] frames , and there are totally [966] frames, account for [54.761905%] 
 ongest submap tracked : [18370149000 us]，and the dataset time is : [39029026000 us], account for[47.067916%]
 
-mean ape is: 0.09177302048954088
-mean tracking_Rate is: 44.9629501%
+mean_ape = 0.09177302048954088
+mean_tracking_Rate is = 44.9629501%
 mean costed time is: 51.898345017433165
+stderr_ape = 0.09959299058094159
+stderr_tracking_Rate = 15.440512305293208%
+stderr_time = 0.4960529765736687

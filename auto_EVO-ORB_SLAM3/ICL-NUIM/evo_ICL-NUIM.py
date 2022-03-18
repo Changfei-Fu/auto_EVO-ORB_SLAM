@@ -189,14 +189,20 @@ def evo_data(data_Path,times):#输入某个数据集地址
         tracking_Rate[i] = subprocess.getoutput(cmd)
     
     sum_ape=sum(rmse)
+    stderr_ape=np.std(rmse,ddof=1)
     sum_tracking_Rate=sum(tracking_Rate)
+    stderr_tracking_Rate=np.std(tracking_Rate,ddof=1)
     sum_time=sum(time)
+    stderr_time=np.std(time,ddof=1)
 
 
     data=open(results_Path+"/Results.txt","a")
-    print("mean ape is: "+str(sum_ape/times),file=data)
-    print("mean tracking_Rate is: "+str(sum_tracking_Rate/times)+"%",file=data)
+    print("mean_ape = "+str(sum_ape/times),file=data)
+    print("mean_tracking_Rate is = "+str(sum_tracking_Rate/times)+"%",file=data)
     print("mean costed time is: "+str(sum_time/times),file=data)
+    print("stderr_ape = "+str(stderr_ape),file=data)
+    print("stderr_tracking_Rate = "+str(stderr_tracking_Rate)+"%",file=data)
+    print("stderr_time = "+str(stderr_time),file=data)
     data.close()
     
     
