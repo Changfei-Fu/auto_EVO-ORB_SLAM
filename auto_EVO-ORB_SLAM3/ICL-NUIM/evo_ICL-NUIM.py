@@ -140,7 +140,7 @@ def evo_data(data_Path,times):#输入某个数据集地址
                 os.system("cp "+data_Path+"/"+Names[i]+" ./groundtruth.txt")
         imagenum=len(os.listdir(data_Path+"/rgb"))
         os.system("cp ./src/rgb.txt ./")
-        os.system("./prepare "+str(imagenum))
+        os.system("./prepare "+str(imagenum)+" ./rgb.txt ./groundtruth.txt")
 
         os.system("mv ./rgb.txt "+results_Path+"/")
         os.system("mv ./groundtruth.txt "+results_Path+"/")

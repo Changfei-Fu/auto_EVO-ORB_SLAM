@@ -3,29 +3,35 @@
 #include<sstream>
 #include<vector>
 using namespace std;
-void change_rgbtxt(const string &srcFile, const string &dstFile,int num){
+void change_rgbtxt(const string &srcFile, int num){
     ifstream f_i;
     ofstream f_o;
     f_i.open(srcFile.c_str());
-    f_o.open(dstFile.c_str());
+    
     int i(0);
+    vector<string> vString;
     while(!f_i.eof())
     {
         if(i==num){
             break;
         }
-        string s;
-        getline(f_i,s);//此函数每次读一行,存在S中
-        if(!s.empty())
+        string local_String;
+        getline(f_i,local_String);//此函数每次读一行,存在S中
+        if(!local_String.empty())
         {
-            if(s[0]=='#')
+            if(local_String[0]=='#')
                 continue;
             else{
-                f_o << s <<endl;
+                vString.push_back(local_String);
                 i++;
             }
         }
     }
+    f_o.open(srcFile.c_str());
+
+    for(int i=0 ; i<num-1; i++){
+        f_o<<vString[i]<<endl;
+    }f_o<<vString[num-1]<<endl;
 }
 
 void LoadImages(const string &strFile, vector<double> &vTimestamps)
@@ -55,53 +61,50 @@ void LoadImages(const string &strFile, vector<double> &vTimestamps)
 }
 void WriteImages(const string &strFile, vector<double> &vTimestamps)
 {
-
-
+    vector<string> vsLines;
     ifstream f_i;
 	ofstream f_o;
     f_i.open(strFile.c_str());
-	f_o.open("./groundtruth.txt");
 	int lines(0);
+    vector<string> vString(8);
+	string local_String;
+    stringstream ss;
     while(!f_i.eof())
     {
-        vector<string> String(8);
-		string s;
-        getline(f_i,s);//此函数每次读一行
-        if(!s.empty())
+        getline(f_i,local_String);//此函数每次读一行
+        if(!local_String.empty())
         {
-            if(s[0]=='#')
+            if(local_String[0]=='#')
                 continue;
-			stringstream ss;
-            ss << s;
+            ss << local_String;
 			for(int i=0;i<8;i++){
-				ss >> String[i];	
+				ss >> vString[i];	
 			}
-            stringstream sss;
-            sss<<std::fixed<<vTimestamps[lines++];
-			sss>>String[0];
-			//cout<<String[0]<<endl;
-			for(int i=0;i<7;i++){
-				f_o<<String[i]<<" ";
-                //cout<<String[i]<<"";
-			}f_o<<String[7]<<endl;
+
+            ss.clear();
+            ss.str("");
+            ss<<std::fixed<<vTimestamps[lines++];
+			for(int i=1;i<7;i++){
+				ss << vString[i]<<" ";	
+			}ss << vString[7];
+            vsLines.push_back(ss.str());
+
+            ss.clear();
+            ss.str("");
         }
     }
+    f_i.close();
+    f_o.open(strFile.c_str());
+    for(int i=0; i<lines-1; i++){
+        f_o<<vsLines[i]<<endl;
+    }f_o<<vsLines[lines-1];
+
 
 }
 
 int main(int argc, char** argv)
 {
     int Image_num(0),num(0);
-    //cv::Mat img0=cv::imread("../rgb/0.png",cv::IMREAD_UNCHANGED);
-    // while(1){
-    //     num++;
-    //     cv::Mat img=cv::imread("./rgb/"+to_string(num)+".png",cv::IMREAD_UNCHANGED);
-    //     if(img.empty()){
-    //         num--;
-    //         break;
-    //     }
-    //     //cout<<num<<endl;
-    // }
     stringstream ss;
     ss<<argv[1];
     ss>>Image_num;
@@ -110,18 +113,15 @@ int main(int argc, char** argv)
 //    }else{
 //        Image_num=num+1;
 //    }
-
-    rename("./rgb.txt", "./RGB.txt");
-    change_rgbtxt("./RGB.txt","./rgb.txt",Image_num);//删除TUM中rgb.txt的多余部分
-    remove("./RGB.txt");
+    change_rgbtxt(argv[2],Image_num);//删除TUM中rgb.txt的多余部分
     vector<double> vTimestamps_rgb;
-    LoadImages("./rgb.txt",vTimestamps_rgb);//取出rgb.txt时间戳
+    LoadImages(argv[2],vTimestamps_rgb);//取出rgb.txt时间戳
 
 //    for(auto it: vTimestamps_rgb){
 //        cout<<std::fixed<<it<<endl;
 //    }
-    rename("./groundtruth.txt", "./ground_truth.txt");
-    WriteImages("./ground_truth.txt",vTimestamps_rgb);//修改GT时间戳
-    remove("./ground_truth.txt");
+
+    WriteImages(argv[3],vTimestamps_rgb);//修改GT时间戳
+
     return 0;
 }
