@@ -7,7 +7,7 @@ cd ORB_SLAM3
 
 sh ./build.sh
 
-## 2. At the second step you do nothing apart from running the python programs.
+## 2. At the second step you do nothing apart from running the python Scripts.
 
 ## Examples
 #### 1). ICL-NUIM dataset
