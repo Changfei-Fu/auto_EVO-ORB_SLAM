@@ -48,7 +48,7 @@ MESSAGE(${OpenCV_VERSION})
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 find_package(realsense2)
-find_package(COLMAP REQUIRED)
+#find_package(COLMAP REQUIRED)
 
 
 include_directories(
@@ -57,10 +57,10 @@ ${PROJECT_SOURCE_DIR}/include
 ${PROJECT_SOURCE_DIR}/include/CameraModels
 ${EIGEN3_INCLUDE_DIR}
 ${Pangolin_INCLUDE_DIRS}
-${COLMAP_INCLUDE_DIRS}
+#${COLMAP_INCLUDE_DIRS}
 )
 
-link_directories(${COLMAP_LINK_DIRS})
+#link_directories(${COLMAP_LINK_DIRS})
 
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
