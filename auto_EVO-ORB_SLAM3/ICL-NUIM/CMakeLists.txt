@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-Project(Evoluation)
+Project(evo_ORBSLAM3)
 
 IF(NOT CMAKE_BUILD_TYPE)
     SET(CMAKE_BUILD_TYPE Release)

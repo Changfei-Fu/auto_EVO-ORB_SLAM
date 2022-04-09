@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(evo_colmap)
+project(evo_ORBSLAM3)
 
 MESSAGE("Build type: " ${CMAKE_BUILD_TYPE})
 
@@ -24,13 +24,8 @@ else()
 endif()
 
 
-find_package(COLMAP REQUIRED)
-
-link_directories(${COLMAP_LINK_DIRS})
-
 include_directories(
 ${PROJECT_SOURCE_DIR}
-${COLMAP_INCLUDE_DIRS}
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/)
