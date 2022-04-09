@@ -9,7 +9,7 @@ sh ./build.sh
 
 ## 2. At the second step you do nothing apart from running the python Scripts.
 
-Note that there should be folders of sequences in the folder named Tum/folders
+Note that there should be folders of sequences in the folder named Tum/folders.
 
 ## Examples
 #### 1). ICL-NUIM dataset
