@@ -209,9 +209,15 @@ def evo_data(data_Path,times):#输入某个数据集地址
 dataset_Path=sys.argv[1]
 data_Name=os.listdir(dataset_Path)
 data_Name.sort()
-data_path={}
+
+folder_Names={}
 for i in range(0,len(data_Name)):
-    print(data_Name[i]+":")
-    data_path[i]=dataset_Path+"/"+data_Name[i]
+    if os.path.isdir(dataset_Path+"/"+data_Name[i]):
+        folder_Names[i]=data_Name[i]
+
+data_path={}
+for i in range(0,len(folder_Names)):
+    print(folder_Names[i]+":")
+    data_path[i]=dataset_Path+"/"+folder_Names[i]
     evo_data(data_path[i],10)
 #python3 evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders
