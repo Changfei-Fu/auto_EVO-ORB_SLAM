@@ -13,19 +13,19 @@ Note that there should be folders of sequences in the folder named Tum/folders
 
 ## Examples
 #### 1). ICL-NUIM dataset
-cd ./auto_EVO-ORB_SLAM3/ICL-NUIM
+cd ./auto_EVO-ORB_SLAM3/ICL-NUIM/
 
-python3 evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders
+python3 evo_ICL-NUIM.py ~/dataset/ICL-NUIM/folders/
 
 #### 2). Tum dataset
-cd ./auto_EVO-ORB_SLAM3/Tum
+cd ./auto_EVO-ORB_SLAM3/Tum/
 
-python3 evo_Tum.py ~/dataset/Tum/folders
+python3 evo_Tum.py ~/dataset/Tum/folders/
 
 #### 3). EuRoc dataset
-cd ./auto_EVO-ORB_SLAM3/EuRoc
+cd ./auto_EVO-ORB_SLAM3/EuRoc/
 
-python3 evo_EuRoc.py ~/dataset/EuRoc/folders
+python3 evo_EuRoc.py ~/dataset/EuRoc/folders/
 
 # Specialties
 ## 1. Resume after interrupted
