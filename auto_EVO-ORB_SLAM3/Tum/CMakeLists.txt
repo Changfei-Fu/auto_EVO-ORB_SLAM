@@ -24,16 +24,36 @@ else()
 endif()
 
 
-
-
+find_package(Eigen3 3.1.0 REQUIRED)
+find_package(OpenCV 4.0)
+if(NOT OpenCV_FOUND)
+  find_package(OpenCV 3.0)
+  if(NOT OpenCV_FOUND)
+    message(FATAL_ERROR "OpenCV > 3.0 not found.")
+  endif()
+endif()
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
+${EIGEN3_INCLUDE_DIR}
 )
+
+#target_link_libraries(${PROJECT_NAME}
+#${OpenCV_LIBS}
+#)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/)
 
 
 add_executable(tracking_Rate
 ${PROJECT_SOURCE_DIR}/src/tracking_Rate.cc
+)
+
+add_executable(data_associate
+${PROJECT_SOURCE_DIR}/src/data_association.cc
+)
+
+target_link_libraries(data_associate
+${OpenCV_LIBS}
+${EIGEN3_LIBS}
 )
