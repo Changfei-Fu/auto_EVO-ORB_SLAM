@@ -10,7 +10,7 @@
 using namespace std;
 using namespace cv;
 
-
+#define debug
 void LoadImages(const string &strFile, vector<string> &vstrImageFilenames, vector<double> &vTimestamps);
 vector<double> checkFundamental(vector<DMatch> matches, vector<KeyPoint> keyPoints_1, vector<KeyPoint> keyPoints_2);
 vector<Point2d> distort(vector<Point2d> Points);
@@ -73,6 +73,7 @@ int data_Associate(Mat& frame1, Mat& frame2){
     if(inlier_matches.size()==0){
         return 0;
     }
+#ifdef debug
     Mat img_match;
     drawMatches(frame1, keypoints_1, frame2, keypoints_2, inlier_matches, img_match);
 
@@ -85,8 +86,8 @@ int data_Associate(Mat& frame1, Mat& frame2){
     //     //cout<<matches[i].distance<<endl;
     //     if(matches[i].distance)
     // }
-    //waitKey(0);
-
+    waitKey(1);
+#endif
 
     return inlier_matches.size();
 }
@@ -103,7 +104,9 @@ int main(int argc, char** argv)
     Mat im1,im2;
     int inlier_matches(0);
     for(int ni=0; ni<nImages; ni++){
-        if(ni==72){
+#ifdef debug
+        //if(ni==196){
+#endif
             im1 = cv::imread(string(argv[2])+"/"+vstrImageFilenames[ni],cv::IMREAD_UNCHANGED);
             for(int nj=0; nj<nImages; nj++){
                 im2 = cv::imread(string(argv[2])+"/"+vstrImageFilenames[nj],cv::IMREAD_UNCHANGED);
@@ -116,7 +119,9 @@ int main(int argc, char** argv)
                 }
             }
             fs<<endl;
-        }
+#ifdef debug
+        //}
+#endif
     }
     fs.close();
 }
@@ -160,10 +165,10 @@ vector<double> checkFundamental(vector<DMatch> matches, vector<KeyPoint> keyPoin
     points2=distort(points2);
 
 
-    cout<<"Points.size()= "<<points1.size()<<endl;
+    cout<<"Points.size() used for ransac = "<<points1.size()<<endl;
     if(points1.size()<=15 || points2.size()<=15){
         for (int i = 0; i < (int) matches.size(); i++) {
-            score.push_back(1000);
+            score.push_back(10);
         }
         return score;
     }
@@ -171,6 +176,13 @@ vector<double> checkFundamental(vector<DMatch> matches, vector<KeyPoint> keyPoin
 
 
     Mat f_m=  findFundamentalMat(points1, points2, FM_RANSAC,3,0.99,50);
+
+    if(f_m.empty()){
+        for (int i = 0; i < (int) matches.size(); i++) {
+            score.push_back(10);
+        }
+        return score;
+    }
 
     Eigen::Matrix<double, 3, 3> F;
 
