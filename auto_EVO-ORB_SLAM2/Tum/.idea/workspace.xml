@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="evo_ORBSLAM3" targetName="data_associate" />
+      <config projectName="evo_ORBSLAM3" targetName="tracking_Rate" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a08b4b9-d273-44ce-96ef-932866b20656" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../ORB_SLAM3/Examples/Stereo-Inertial/stereo_inertial_tum_vi" beforeDir="false" afterPath="$PROJECT_DIR$/../../ORB_SLAM3/Examples/Stereo-Inertial/stereo_inertial_tum_vi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ORB_SLAM3/Thirdparty/g2o/lib/libg2o.so" beforeDir="false" afterPath="$PROJECT_DIR$/../../ORB_SLAM3/Thirdparty/g2o/lib/libg2o.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ORB_SLAM3/lib/libORB_SLAM3.so" beforeDir="false" afterPath="$PROJECT_DIR$/../../ORB_SLAM3/lib/libORB_SLAM3.so" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="2AhM7Cppzvzab4b4v0tFhNhi5eU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected="CMake Application.data_associate">
+    <configuration name="data_associate" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="evo_ORBSLAM3" TARGET_NAME="data_associate" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="evo_ORBSLAM3" RUN_TARGET_NAME="data_associate">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tracking_Rate" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="evo_ORBSLAM3" TARGET_NAME="tracking_Rate" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="evo_ORBSLAM3" RUN_TARGET_NAME="tracking_Rate">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.data_associate" />
+      <item itemvalue="CMake Application.tracking_Rate" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a08b4b9-d273-44ce-96ef-932866b20656" name="Default Changelist" comment="" />
+      <created>1655457193869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655457193869</updated>
+      <workItem from="1655457196160" duration="1601000" />
+      <workItem from="1663422595733" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

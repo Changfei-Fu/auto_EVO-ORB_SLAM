@@ -1,0 +1,66 @@
+1th ape is: 0.17746918217700242
+starting time is： [1305032209874326000 us],refer to [885]th frame
+ending time is： [1305032227675702000 us],refer to [1419]th frame
+longest submap tracked ： [535] frames , and there are totally [1419] frames, account for [37.702607%] 
+ongest submap tracked : [17801376000 us]，and the dataset time is : [47258934000 us], account for[37.667748%]
+
+2th ape is: 0.39885341339058683
+starting time is： [1305032195311768000 us],refer to [448]th frame
+ending time is： [1305032216578509000 us],refer to [1086]th frame
+longest submap tracked ： [639] frames , and there are totally [1419] frames, account for [45.031712%] 
+ongest submap tracked : [21266741000 us]，and the dataset time is : [47258934000 us], account for[45.000467%]
+
+3th ape is: 0.2865389532822934
+starting time is： [1305032180717342000 us],refer to [10]th frame
+ending time is： [1305032227507685000 us],refer to [1414]th frame
+longest submap tracked ： [1405] frames , and there are totally [1419] frames, account for [99.013390%] 
+ongest submap tracked : [46790343000 us]，and the dataset time is : [47258934000 us], account for[99.008460%]
+
+4th ape is: 0.5587938692656267
+starting time is： [1305032180516840000 us],refer to [4]th frame
+ending time is： [1305032224675770000 us],refer to [1329]th frame
+longest submap tracked ： [1326] frames , and there are totally [1419] frames, account for [93.446089%] 
+ongest submap tracked : [44158930000 us]，and the dataset time is : [47258934000 us], account for[93.440385%]
+
+5th ape is: 0.05403848899843623
+starting time is： [1305032181480888000 us],refer to [33]th frame
+ending time is： [1305032227507685000 us],refer to [1414]th frame
+longest submap tracked ： [1382] frames , and there are totally [1419] frames, account for [97.392530%] 
+ongest submap tracked : [46026797000 us]，and the dataset time is : [47258934000 us], account for[97.392796%]
+
+6th ape is: 0.4515175910523664
+starting time is： [1305032180516840000 us],refer to [4]th frame
+ending time is： [1305032227507685000 us],refer to [1414]th frame
+longest submap tracked ： [1411] frames , and there are totally [1419] frames, account for [99.436223%] 
+ongest submap tracked : [46990845000 us]，and the dataset time is : [47258934000 us], account for[99.432723%]
+
+7th ape is: 0.26792278408413067
+starting time is： [1305032180516840000 us],refer to [4]th frame
+ending time is： [1305032227475540000 us],refer to [1413]th frame
+longest submap tracked ： [1410] frames , and there are totally [1419] frames, account for [99.365751%] 
+ongest submap tracked : [46958700000 us]，and the dataset time is : [47258934000 us], account for[99.364704%]
+
+8th ape is: 0.25618980772141503
+starting time is： [1305032180516840000 us],refer to [4]th frame
+ending time is： [1305032225708999000 us],refer to [1360]th frame
+longest submap tracked ： [1357] frames , and there are totally [1419] frames, account for [95.630726%] 
+ongest submap tracked : [45192159000 us]，and the dataset time is : [47258934000 us], account for[95.626700%]
+
+9th ape is: 0.2893263624498946
+starting time is： [1305032180516840000 us],refer to [4]th frame
+ending time is： [1305032227507685000 us],refer to [1414]th frame
+longest submap tracked ： [1411] frames , and there are totally [1419] frames, account for [99.436223%] 
+ongest submap tracked : [46990845000 us]，and the dataset time is : [47258934000 us], account for[99.432723%]
+
+10th ape is: 0.2523781073609876
+starting time is： [1305032180717342000 us],refer to [10]th frame
+ending time is： [1305032227507685000 us],refer to [1414]th frame
+longest submap tracked ： [1405] frames , and there are totally [1419] frames, account for [99.013390%] 
+ongest submap tracked : [46790343000 us]，and the dataset time is : [47258934000 us], account for[99.008460%]
+
+mean_ape = 0.29930285597827394
+mean_tracking_Rate is = 86.5375166%
+mean costed time is: 61.25258047580719
+stderr_ape = 0.14170434884083294
+stderr_tracking_Rate = 23.967197494661445%
+stderr_time = 0.850088784442662
