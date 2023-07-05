@@ -6,6 +6,7 @@
 
 using namespace std;
 
+uint64_t trackingTime(vector<uint64_t> &vTimestamps);
 int LoadImages(const string &strFile, vector<uint64_t> &vTimestamps);
 void SearchImages(const string &strFile, vector<uint64_t> &vTimestamps, int &start, int &end);
 
@@ -18,7 +19,7 @@ int main(int argc, char** argv)
 
     rgb_size=LoadImages(argv[1],vTimestamps_rgb);
     KFT_size=LoadImages(argv[2],vTimestamps_KFT);
-
+    uint64_t trackingtime = trackingTime(vTimestamps_KFT);
     /*else{
         rgb_size=LoadImages(string(argv[1])+"/data.txt",vTimestamps_rgb);
         KFT_size=LoadImages(string(argv[1])+"/KFT.txt",vTimestamps_KFT);
@@ -35,16 +36,17 @@ int main(int argc, char** argv)
     }*/
     int data_num=rgb_size;
     int track_num= end-start+1;
-    uint64_t data_time=vTimestamps_rgb[1]-vTimestamps_rgb[0];
+    uint64_t data_time=vTimestamps_rgb[vTimestamps_rgb.size()-1]-vTimestamps_rgb[0];
     uint64_t track_time=vTimestamps_KFT[1]-vTimestamps_KFT[0];
     double num_rate=100*double(track_num)/double(data_num);
     double time_rate=100*double(track_time)/double(data_time);
+    time_rate=100*double(trackingtime)/double(data_time);
     ofstream of;
     of.open(argv[3],ios::in|ios::app);
     of<<"starting time is： ["<<vTimestamps_KFT[0]<<" us],refer to ["<<std::fixed<<(start+1)<<"]th frame"<<endl;
     of<<"ending time is： ["<<vTimestamps_KFT[1]<<" us],refer to ["<<(end+1)<<"]th frame"<<endl;
     of<<"longest submap tracked ： ["<<std::fixed<<track_num<<"] frames , and there are totally ["<<rgb_size<<"] frames, account for ["<< num_rate<<"%] "<<endl;
-    of<<"ongest submap tracked : ["<<track_time<<" us]，and the dataset time is : ["<<data_time <<" us], account for["<< time_rate<<"%]"<<endl;
+    of<<"ongest submap tracked : ["<<trackingtime<<" us]，and the dataset time is : ["<<data_time <<" us], account for["<< time_rate<<"%]"<<endl;
     of<<endl;
     cout<<std::fixed<<time_rate<<endl;
 
@@ -53,7 +55,7 @@ int main(int argc, char** argv)
 
 
 
-int LoadImages(const string &strFile, vector<uint64_t> &vTimestamps)//此函数只取第一帧和最后一帧的时间戳
+int LoadImages(const string &strFile, vector<uint64_t> &vTimestamps)//此函数取帧的时间戳
 {
     bool start(true);
     int SIZE(0);
@@ -77,34 +79,14 @@ int LoadImages(const string &strFile, vector<uint64_t> &vTimestamps)//此函数�
                 ss << s;
                 uint64_t t;
                 ss >> t;
-                if(start){
-                    start=false;
-                    vTimestamps.push_back(t);
-                }else{
-                    if(vTimestamps.size()>=2){
-                        vTimestamps.pop_back();
-                    }
-                    vTimestamps.push_back(t);
-                }
+                vTimestamps.push_back(t);
             }else{//tum
                 ss << s;
-             
                 long double t;
                 uint64_t t1;
                 ss >> t;
-
                 t1=t*1e9;
-                if(start){
-                    start=false;
-                    vTimestamps.push_back(t1);
-
-
-                }else{
-                    if(vTimestamps.size()==2){
-                        vTimestamps.pop_back();
-                    }
-                    vTimestamps.push_back(t1);
-                }
+                vTimestamps.push_back(t1);
             }
             SIZE++;
             continue;
@@ -149,4 +131,17 @@ void SearchImages(const string &strFile, vector<uint64_t> &vTimestamps, int &sta
             continue;
         }
     }
+}
+
+uint64_t trackingTime(vector<uint64_t> &vTimestamps)
+{
+    uint64_t ttime(0);
+    for(int i = 0; i < vTimestamps.size(); i++){
+        //cout<<vTimestamps[i]<<endl;
+        uint64_t time = vTimestamps[i+1] - vTimestamps[i];
+        if(time<3000000000){
+            ttime+=time;
+        }
+    }
+    return ttime;
 }
