@@ -139,7 +139,7 @@ uint64_t trackingTime(vector<uint64_t> &vTimestamps)
     for(int i = 0; i < vTimestamps.size(); i++){
         //cout<<vTimestamps[i]<<endl;
         uint64_t time = vTimestamps[i+1] - vTimestamps[i];
-        if(time<3000000000){
+        if(time<2000000000){
             ttime+=time;
         }
     }
