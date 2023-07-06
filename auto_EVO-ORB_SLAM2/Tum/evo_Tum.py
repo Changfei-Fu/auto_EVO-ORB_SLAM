@@ -193,6 +193,7 @@ def evo_data(data_Path,times):#输入某个数据集地址
         cmd="./tracking_Rate "+results_Path+"/rgb.txt "+results_Path+"/KeyFrameTrajectory"+str(i+1)+".txt "\
              +results_Path+"/Results.txt"
         tracking_Rate[i] = subprocess.getoutput(cmd)
+        #os.system(cmd)
     sum_ape=sum(rmse)
     stderr_ape=np.std(rmse,ddof=1)
     sum_tracking_Rate=sum(tracking_Rate)

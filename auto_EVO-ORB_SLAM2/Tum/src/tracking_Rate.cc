@@ -8,6 +8,8 @@ using namespace std;
 
 int LoadImages(const string &strFile, vector<uint64_t> &vTimestamps);
 void SearchImages(const string &strFile, vector<uint64_t> &vTimestamps, int &start, int &end);
+uint64_t trackingTime(vector<uint64_t> &vTimestamps);
+
 
 int main(int argc, char** argv)
 {
@@ -34,8 +36,9 @@ int main(int argc, char** argv)
     }*/
     int data_num=rgb_size;
     int track_num= end-start+1;
-    uint64_t data_time=vTimestamps_rgb[1]-vTimestamps_rgb[0];
-    uint64_t track_time=vTimestamps_KFT[1]-vTimestamps_KFT[0];
+    uint64_t data_time=vTimestamps_rgb[vTimestamps_rgb.size()-1]-vTimestamps_rgb[0];
+    uint64_t track_time=vTimestamps_KFT[vTimestamps_KFT.size()-1]-vTimestamps_KFT[0];
+    track_time = trackingTime(vTimestamps_KFT);
     double num_rate=100*double(track_num)/double(data_num);
     double time_rate=100*double(track_time)/double(data_time);
     ofstream of;
@@ -78,31 +81,14 @@ int LoadImages(const string &strFile, vector<uint64_t> &vTimestamps)//此函数�
                 ss << s;
                 uint64_t t;
                 ss >> t;
-                if(start){
-                    start=false;
-                    vTimestamps.push_back(t);
-                }else{
-                    if(vTimestamps.size()>=2){
-                        vTimestamps.pop_back();
-                    }
-                    vTimestamps.push_back(t);
-                }
+                vTimestamps.push_back(t);
             }else{//tum
                 ss << s;
                 long double t;
                 uint64_t t1;
                 ss >> t;
                 t1=t*1e9;
-                if(start){
-                    start=false;
-                    vTimestamps.push_back(t1);
-
-                }else{
-                    if(vTimestamps.size()==2){
-                        vTimestamps.pop_back();
-                    }
-                    vTimestamps.push_back(t1);
-                }
+                vTimestamps.push_back(t1);
             }
             SIZE++;
             continue;
@@ -146,4 +132,17 @@ void SearchImages(const string &strFile, vector<uint64_t> &vTimestamps, int &sta
             continue;
         }
     }
+}
+
+uint64_t trackingTime(vector<uint64_t> &vTimestamps)
+{
+    uint64_t ttime(0);
+    for(int i = 0; i < vTimestamps.size(); i++){
+        //cout<<vTimestamps[i]<<endl;
+        uint64_t time = vTimestamps[i+1] - vTimestamps[i];
+        if(time<2000000000){
+            ttime+=time;
+        }
+    }
+    return ttime;
 }
