@@ -1,4 +1,0 @@
-/home/changfei/whelan_ws/src/auto_EVO-ORB_SLAM/auto_EVO-ORB_SLAM2/Tum/build/CMakeFiles/tracking_Rate.dir
-/home/changfei/whelan_ws/src/auto_EVO-ORB_SLAM/auto_EVO-ORB_SLAM2/Tum/build/CMakeFiles/data_associate.dir
-/home/changfei/whelan_ws/src/auto_EVO-ORB_SLAM/auto_EVO-ORB_SLAM2/Tum/build/CMakeFiles/edit_cache.dir
-/home/changfei/whelan_ws/src/auto_EVO-ORB_SLAM/auto_EVO-ORB_SLAM2/Tum/build/CMakeFiles/rebuild_cache.dir
